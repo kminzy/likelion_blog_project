@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',blog.views.home, name="home"),
+    path('blog/<int:blog_id>',blog.views.detail, name="detail"), #blog/id형식으로 주소에 출력, id받아옴
 ]

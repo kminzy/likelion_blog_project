@@ -5,7 +5,7 @@ from django.db import models
 
 class Blog(models.Model): # Model 클래스 메소드 사용
     title = models.CharField(max_length=200) # 제목은 최대 200자
-    wirter = models.CharField(max_length=100)
+    writer = models.CharField(max_length=100)
     pub_date = models.DateTimeField()
     body = models.TextField()
 
@@ -13,4 +13,4 @@ class Blog(models.Model): # Model 클래스 메소드 사용
         return self.title
 
     def summary(self):
-        return self.body[:100] #100자 이하로 출력
+        return self.body[:50] #100자 이하로 출력

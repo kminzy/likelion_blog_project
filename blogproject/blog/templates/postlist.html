@@ -27,7 +27,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'list' %}">Post</a>
+            <a class="nav-link" href="{% url 'postlist' %}">Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About Me</a>
@@ -59,7 +59,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for blog in lists.all %}
+        {% for blog in postlists.all %}
         <tr class="text-center" style="border-bottom:1px solid black;">
           <th scope="row">
             <span>{{blog.id}}</span>

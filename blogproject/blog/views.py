@@ -11,9 +11,9 @@ def detail(request, blog_id):
     details = get_object_or_404(Blog, pk = blog_id) #blog_id를 pk로 받는다
     return render(request, 'detail.html', {'details':details})
 
-def list(request):
-    lists = Blog.objects
-    return render(request, 'list.html', {'lists':lists})
+def postlist(request):
+    postlists = Blog.objects
+    return render(request, 'postlist.html', {'postlists':postlists})
 
 def about(request):
     return render(request, 'about.html')

@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',blog.views.home, name="home"),
     path('blog/<int:blog_id>',blog.views.detail, name="detail"), #blog/id형식으로 주소에 출력, id받아옴
-    path('blog/',blog.views.list, name="list"),
+    path('blog/',blog.views.postlist, name="postlist"),
     path('about_me/',blog.views.about, name="about"),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -12,7 +12,8 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Blog</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,6 +23,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'postlist' %}">Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'new' %}">Write</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}">About Me</a>
@@ -44,6 +48,7 @@
               <div >
                 <h3>&#9989; 글제목 : {{details.title}}</h3>
                 <h5>작성일자 : {{details.pub_date}}</h5>
+                <h5>작성자 : {{details.writer}}</h5>
                 <hr>
                 <h4 style="font-weight: bold;">내용</h4>
                 <br>
@@ -55,7 +60,17 @@
                 </div>
                 
                 <br>
+              
               </div>
+
+              <br>
+              <button type="button" class="btn btn-dark" style="text-align: center;">
+                <a href="#" style="color:white">수정</a>
+              </button>
+
+              <button type="button" class="btn btn-dark" style="text-align: center;">
+                <a href="#" style="color:white">삭제</a>
+              </button>
               <br><br>
               <button type="button" class="btn btn-dark" style="text-align: center;">
                 <a href="{% url 'postlist' %}" style="color:white">이전 페이지</a>

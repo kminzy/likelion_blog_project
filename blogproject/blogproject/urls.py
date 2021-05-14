@@ -18,6 +18,9 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 import blog.views
+import portfolio.views
+from blog.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +28,11 @@ urlpatterns = [
     path('blog/<int:blog_id>',blog.views.detail, name="detail"), #blog/id형식으로 주소에 출력, id받아옴
     path('blog/',blog.views.postlist, name="postlist"),
     path('about_me/',blog.views.about, name="about"),
+    path('blog/new', blog.views.new, name="new"),
+    path('blog/create', blog.views.create, name="create"),
+    path('portfolio/', portfolio.views.portfolio, name="portfolio"),
+    path('blog/edit/<int:id>', blog.views.edit, name="edit"),
+    path('blog/update/<int:id>', update, name="update"),
 ]
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

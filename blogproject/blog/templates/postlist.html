@@ -30,6 +30,9 @@
             <a class="nav-link" href="{% url 'postlist' %}">Post</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'new' %}">Write</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About Me</a>
           </li>
         </ul>
@@ -55,6 +58,7 @@
         <tr class="text-center" style="border-bottom:solid gray;">
           <th scope="col">번호</th>
           <th scope="col">제목</th>
+          <th scope="col">작성자</th>
           <th scope="col">작성일</th>
         </tr>
       </thead>
@@ -68,6 +72,9 @@
             <a href="/blog/{{blog.id}}">
               <span>{{blog.title}}</span>
             </a>
+          </th>
+          <th scope="row">
+            <span>{{blog.writer}}</span>
           </th>
           <th scope="row">
             <span>{{blog.pub_date}}</span>

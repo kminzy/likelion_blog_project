@@ -33,6 +33,7 @@ urlpatterns = [
     path('portfolio/', portfolio.views.portfolio, name="portfolio"),
     path('blog/edit/<int:id>', blog.views.edit, name="edit"),
     path('blog/update/<int:id>', update, name="update"),
+    path('blog/delete/<int:id>', delete, name="delete"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

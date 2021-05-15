@@ -4,11 +4,14 @@
 
 .container {
     margin-top: 20px;
+    margin-bottom: 20px;
     height:100%;
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
+
 
 
 html, body{

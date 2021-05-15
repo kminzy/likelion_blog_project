@@ -13,7 +13,7 @@ def detail(request, blog_id):
     return render(request, 'detail.html', {'details':details})
 
 def postlist(request):
-    postlists = Blog.objects
+    postlists = Blog.objects.all()
     return render(request, 'postlist.html', {'postlists':postlists})
 
 def about(request):
@@ -31,15 +31,20 @@ def create(request):
     blog.save()
     return redirect('/blog/' + str(blog.id))
 
-def edit(request, blog_id):
-    edit_blog = Blog.objects.get(blog_id = id)
-    return render(request, 'edit.html', {'blog':edit_blog})
+def edit(request, id):
+    edit_blog = Blog.objects.get(id = id)
+    return render(request, 'edit.html', {'edit_blog':edit_blog})
 
-def update(request, blog_id):
-    update_blog = Blog.objects.get(blog_id = id)
+def update(request, id):
+    update_blog = Blog.objects.get(id = id)
     update_blog.title = request.POST.get('title', False)
     update_blog.body = request.POST.get('body', False)
     update_blog.writer = request.POST.get('writer', False)
     update_blog.pub_date = timezone.datetime.now()
     update_blog.save()
     return redirect('/blog/' + str(update_blog.id))
+
+def delete(request, id):
+    delete_blog = Blog.objects.get(id = id)
+    delete_blog.delete()
+    return redirect('postlist')

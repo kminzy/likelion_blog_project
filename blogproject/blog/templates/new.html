@@ -46,41 +46,39 @@
     </div>
   </nav>
   <br>
-          <h1 style="margin-left: 50px;">&#9997; 글쓰기</h1>
+  <h1 style="margin-left: 50px;">&#9997; 글쓰기</h1>
 
   <div class="container">
     <form action="{% url 'create' %}" method="POST">
-        {% csrf_token %}
-        <br><br>
+      {% csrf_token %}
+      <br><br>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">제목</span>
-            <input type="text" class="form-control" name="title" aria-describedby="basic-addon1">
-        </div>
-          
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">제목</span>
+        <input type="text" class="form-control" name="title" aria-describedby="basic-addon1">
+      </div>
 
-        <br>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">작성자</span>
-            <input type="text" class="form-control" name="writer" aria-describedby="basic-addon1">
-        </div>
+      <br>
 
-        <br>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">작성자</span>
+        <input type="text" class="form-control" name="writer" aria-describedby="basic-addon1">
+      </div>
 
-        <div class="input-group">
-            <span class="input-group-text">본문</span>
-            <textarea class="form-control" name="body" cols="40" rows="10"></textarea>
-         </div>
+      <br>
 
-         <br>
-        <input class="btn btn-dark" type="submit" value="등록">
+      <div class="input-group">
+        <span class="input-group-text">본문</span>
+        <textarea class="form-control" name="body" cols="40" rows="10"></textarea>
+      </div>
+
+      <br>
+      <input class="btn btn-dark" type="submit" value="등록">
     </form>
-</div>
+  </div>
 
 
 </body>
 
 </html>
-
-

@@ -46,41 +46,42 @@
     </div>
   </nav>
   <br>
-          <h1 style="margin-left: 50px;">&#10024; 수정하기</h1>
+  <h1 style="margin-left: 50px;">&#10024; 수정하기</h1>
+  
 
   <div class="container">
-    <form action="{% url 'update' blog.id %}" method="POST">
-        {% csrf_token %}
-        <br><br>
+    <form action="{% url 'update' edit_blog.id %}" method="POST">
+      {% csrf_token %}
+      <br><br>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1" value="{{blog.title}}">제목</span>
-            <input type="text" class="form-control" name="title" aria-describedby="basic-addon1">
-        </div>
-          
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">제목</span>
+        <input type="text" class="form-control" name="title" aria-describedby="basic-addon1"
+          value="{{edit_blog.title}}">
+      </div>
 
-        <br>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1" value="{{blog.writer}}">작성자</span>
-            <input type="text" class="form-control" name="writer" aria-describedby="basic-addon1">
-        </div>
+      <br>
 
-        <br>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">작성자</span>
+        <input type="text" class="form-control" name="writer" aria-describedby="basic-addon1"
+          value="{{edit_blog.writer}}">
+      </div>
 
-        <div class="input-group">
-            <span class="input-group-text">본문</span>
-            <textarea class="form-control" name="body" cols="40" rows="10">{{blog.body}}</textarea>
-         </div>
+      <br>
 
-         <br>
-        <input class="btn btn-dark" type="submit" value="수정완료">
+      <div class="input-group">
+        <span class="input-group-text">본문</span>
+        <textarea class="form-control" name="body" cols="40" rows="10">{{edit_blog.body}}</textarea>
+      </div>
+
+      <br>
+      <input class="btn btn-dark" type="submit" value="수정완료">
     </form>
-</div>
+  </div>
 
 
 </body>
 
 </html>
-
-

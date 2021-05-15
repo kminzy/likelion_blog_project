@@ -69,7 +69,7 @@
             <span>{{blog.id}}</span>
           </th>
           <th scope="row">
-            <a href="/blog/{{blog.id}}">
+            <a href="{% url 'detail' blog.id %}">
               <span>{{blog.title}}</span>
             </a>
           </th>

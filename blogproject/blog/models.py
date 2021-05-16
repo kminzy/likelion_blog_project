@@ -8,6 +8,7 @@ class Blog(models.Model): # Model 클래스 메소드 사용
     writer = models.CharField(max_length=100)
     pub_date = models.DateTimeField()
     body = models.TextField()
+    image = models.ImageField(upload_to = "blog/", blank=True, null=True) #업로드할 폴더 지정, settings.py 에 MEDIA_URL로 지정해둔 media폴더 안에 blog폴더를 만들어서 관리
 
     def __str__(self): #self인자값 받아서 title 반환
         return self.title

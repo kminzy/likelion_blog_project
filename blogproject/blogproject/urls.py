@@ -20,6 +20,7 @@ from django.conf import settings
 import blog.views
 import portfolio.views
 from blog.views import *
+from django.conf import settings
 
 
 urlpatterns = [
@@ -36,4 +37,4 @@ urlpatterns = [
     path('blog/delete/<int:id>', delete, name="delete"),
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

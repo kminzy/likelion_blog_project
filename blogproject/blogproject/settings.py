@@ -122,12 +122,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#현재 static 파일들이 어디에 있는지 경로 작성해줌
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog', 'static'),
     os.path.join(BASE_DIR, 'portfolio', 'static'),
 ]
 
+#static파일을 어디에 모을건지
+#python manage.py collectstatic
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#유저가 업로드한 파일을 모으는 곳
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#유저에게 업로드한 파일 보여줄 때 가장 앞의 url
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type

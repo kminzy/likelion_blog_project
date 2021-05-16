@@ -5,12 +5,12 @@
 .container {
     margin-top: 20px;
     margin-bottom: 20px;
-    height:100%;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
+
 
 
 html, body{
@@ -35,11 +35,6 @@ header{
     align-items: center;
 }
 
-.sub{
-    display: flex;
-    justify-content: left;
-    border:solid 1px black;
-}
 
 .about_me{
     margin-top:30px;

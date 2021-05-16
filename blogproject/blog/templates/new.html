@@ -49,7 +49,7 @@
   <h1 style="margin-left: 50px;">&#9997; 글쓰기</h1>
 
   <div class="container">
-    <form action="{% url 'create' %}" method="POST">
+    <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <br><br>
 
@@ -71,6 +71,13 @@
       <div class="input-group">
         <span class="input-group-text">본문</span>
         <textarea class="form-control" name="body" cols="40" rows="10"></textarea>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <span class="input-group-text">사진</span>
+        <input type="file" name="image" style="margin-left:20px;">
       </div>
 
       <br>

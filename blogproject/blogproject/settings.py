@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'account.CustomUser' #인증하는 유저 모델로 사용하겠다고 선언, 인증 관련 클래스/메소드들이 user model과 밀접한 관련
+
 
 # Application definition
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'blogproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['blogproject/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

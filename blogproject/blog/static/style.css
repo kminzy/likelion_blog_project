@@ -6,14 +6,15 @@ html, body{
     display:flex;
     flex-direction: column;
     height:100%;
-    width:100%;
 }
 
 .container{
     text-align: center; 
     justify-content: center;
     margin-top: 20px;
+    height:100vh;
 }
+
 
 .text_box{
     text-align: center;

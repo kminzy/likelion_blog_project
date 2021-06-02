@@ -123,6 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+#유저에게 static파일 보여줄 때 가장 앞의 url
 STATIC_URL = '/static/'
 
 #현재 static 파일들이 어디에 있는지 경로 작성해줌
@@ -130,6 +131,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog', 'static'),
     os.path.join(BASE_DIR, 'portfolio', 'static'),
 ]
+
+ALLOWED_HOSTS = ['*']
 
 #static파일을 어디에 모을건지
 #python manage.py collectstatic

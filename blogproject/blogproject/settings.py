@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5$r*)irqa%o-t(t(5)8^99ll7%pxtusdubd=3&4b%--zi($ta_'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-5$r*)irqa%o-t(t(5)8^99ll7%pxtusdubd=3&4b%--zi($ta_')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG', 'TRUE') != 'False')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'account.CustomUser' #인증하는 유저 모델로 사용하겠다고 선언, 인증 관련 클래스/메소드들이 user model과 밀접한 관련
 
@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'portfolio', 'static'),
 ]
 
-ALLOWED_HOSTS = ['*']
+
 
 #static파일을 어디에 모을건지
 #python manage.py collectstatic

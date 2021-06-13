@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.models import User
+from django.contrib import auth
 from .models import Blog #Blog class import
 from django.utils import timezone
 from .forms import BlogForm #입력받는 공간
+from django.core.paginator import Paginator # Paginator 임포트
 
 # Create your views here.
 
@@ -14,7 +17,16 @@ def detail(request, blog_id):
     return render(request, 'detail.html', {'details':details})
 
 def postlist(request):
-    postlists = Blog.objects.all()
+    postlists = Blog.objects.order_by('-pub_date')
+    search = request.GET.get('search')
+    if search == 'true':
+        author = request.GET.get('writer')
+        postlists = Blog.objects.filter(writer=author)
+        return render(request, 'postlist.html', {'postlists':postlists})
+
+    # paginator = Paginator(postlists, 3)
+    # page = request.GET.get('page')
+    # postlists = paginator.get_page(page) #페이지 가져와서 몇 번째 페이지인지 정보 전달
     return render(request, 'postlist.html', {'postlists':postlists})
 
 def about(request):
@@ -50,3 +62,29 @@ def delete(request, id):
     delete_blog = Blog.objects.get(id = id)
     delete_blog.delete()
     return redirect('postlist')
+
+# def signup(request):
+#     if request.method == "POST":
+#         if request.POST['password1'] == request.POST['password2']:
+#             user = User.objects.create_user(username=request.POST['username',], password = request.POST['password1'])
+#             auth.login(request, user)
+#             return redirect('home')
+#     return render(request, 'signup.html')
+
+# def login(request):
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = auth.authenticate(request, username = username, password = password)
+#         if user is not None: #실제로 db에 존재하는 유저인지 검증
+#             auth.login(request, user)
+#             return redirect('home')
+#         else:
+#             return render(request, 'login.html', {'error': '아이디와 비밀번호가 잘못되었습니다. '})
+#     return render(request, 'login.html')
+
+# def logout(request):
+#     if request.method == 'POST':
+#         auth.logout(request)
+#         redirect('home')
+#     return render(request, 'login.html')

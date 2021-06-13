@@ -37,7 +37,26 @@
           </th>
         </tr>
       </tbody>
+      
       {% endfor %}
     </table>
+
+    <button class="btn btn-dark" type="submit" style="color:white; border-color:white; margin:5px;">
+      <a href="?search=true&writer={{user.nickname}}">내가 쓴 글</a>
+  </button>
+
+    <!-- {% if postlists.has_previous %}
+    <a href="?page=1"> 처음 </a>
+    <a href="?page={{postlists.previous_page_number}}"> 이전 </a>
+    {% endif %}
+
+    <span>{{postlists.number}}</span>
+    <span> of </span>
+    <span>{{postlists.paginator.num_pages}}</span>
+
+    {% if postlists.has_next %}
+    <a href="?page={{postlists.next_page_number}}"> 다음 </a>
+    <a href="?page={{postlists.paginator.num_pages}}"> 마지막 </a>
+    {% endif %} -->
     
 {% endblock %}

@@ -20,7 +20,6 @@ from django.conf import settings
 import blog.views
 import portfolio.views
 from blog.views import home
-from django.conf import settings
 
 
 urlpatterns = [

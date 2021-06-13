@@ -2,33 +2,19 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-.container {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
 html, body{
     display:flex;
     flex-direction: column;
     height:100%;
-    width:100%;
-    margin-bottom:20px;
 }
 
-body {
-    display:flex;
-    flex-direction: column;
+.container{
+    text-align: center; 
+    justify-content: center;
+    margin-top: 20px;
+    height:100%;
 }
 
-header{
-    flex:1;
-}
 
 .text_box{
     text-align: center;

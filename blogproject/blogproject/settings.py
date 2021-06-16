@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
     'account.apps.AccountConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -153,9 +154,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #AWS
-
-AWS_ACCESS_KEY_ID = 'AKIAXYJPRYP44KRYYUXV'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'likelion-django-lesson-01'
+AWS_ACCESS_KEY_ID = 'AKIAXYJPRYP4VQHDU2VM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'lion-bucket'
 AWS_S3_SIGNATURE_VERSION= 's3v4'
 AWS_S3_REGION_NAME = 'ap-northeast-2'

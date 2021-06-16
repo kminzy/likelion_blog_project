@@ -30,15 +30,15 @@
 
     <br>
     <button type="button" class="btn btn-dark" style="text-align: center;">
-      <a href="{% url 'edit' details.id %}" style="color:white">수정</a>
+      <a href="{% url 'edit' details.id %}" style="text-decoration: none; color:white">수정</a>
     </button>
 
     <button type="button" class="btn btn-dark" style="text-align: center;">
-      <a href="{% url 'delete' details.id %}" style="color:white">삭제</a>
+      <a href="{% url 'delete' details.id %}" style="text-decoration: none; color:white">삭제</a>
     </button>
     <br><br>
     <button type="button" class="btn btn-dark" style="text-align: center; margin-bottom: 50px;">
-      <a href="{% url 'postlist' %}" style="color:white">이전 페이지</a>
+      <a href="{% url 'postlist' %}" style="text-decoration: none; color:white">이전 페이지</a>
     </button>
   </div>
 

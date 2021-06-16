@@ -22,10 +22,10 @@
         {% for blog in postlists.all %}
         <tr class="text-center" style="border-bottom:1px solid black;">
           <th scope="row">
-            <span>{{blog.id}}</span>
+            <span>{{forloop.counter}}</span>
           </th>
           <th scope="row">
-            <a href="{% url 'detail' blog.id %}">
+            <a href="{% url 'detail' blog.id %}" style="text-decoration: none; color:black;">
               <span>{{blog.title}}</span>
             </a>
           </th>
@@ -41,8 +41,8 @@
       {% endfor %}
     </table>
 
-    <button class="btn btn-dark" type="submit" style="color:white; border-color:white; margin:5px;">
-      <a href="?search=true&writer={{user.nickname}}">내가 쓴 글</a>
+    <button class="btn btn-dark" type="submit" style=" border-color:white; margin:5px;">
+      <a href="?search=true&writer={{user.nickname}}" style="text-decoration: none; color:white;">내가 쓴 글</a>
   </button>
 
     <!-- {% if postlists.has_previous %}

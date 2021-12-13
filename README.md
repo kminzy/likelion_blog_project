@@ -1,4 +1,4 @@
-## Likelion_Blog_Project
+## Likelion Blog Project
 
 - 개발기간: 2021.05 ~ 2021.06
 

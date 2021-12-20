@@ -1,5 +1,7 @@
 ## Likelion Blog Project
 
+- 멋쟁이 사자처럼 세션을 진행하며 제작한 개인 블로그입니다.
+
 - 개발기간: 2021.05 ~ 2021.06
 
 - 사용스택: `HTML` `CSS` `Python` `Django`
